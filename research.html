@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elijah Borjón | Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="page">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-main"><span>Elijah</span> Borjón</div>
+          <div class="brand-sub">Research · Music · Portfolio</div>
+        </div>
+        <nav class="site-nav">
+          <a href="index.html" data-page="index.html">Home</a>
+          <a href="research.html" data-page="research.html">Research</a>
+          <a href="arts.html" data-page="arts.html">Arts</a>
+          <a href="about.html" data-page="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-section--top page-section">
+        <div class="section-eyebrow">Research</div>
+        <h1 class="section-title">Stress, inflammation, and reproductive cancer.</h1>
+        <p class="section-intro">
+          This page hosts an embedded version of my paper on CXCR2-mediated stress and inflammation
+          in female reproductive cancers in Central America. Use the inline viewer below or open the
+          PDF directly in a new tab.
+        </p>
+
+        <p class="section-intro">
+          <strong>Note:</strong> upload your paper as <code>assets/paper.pdf</code> in this repository,
+          or change the file name in the iframe source below.
+        </p>
+
+        <iframe
+          class="paper-frame"
+          src="assets/paper.pdf"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © <span id="year"></span> Elijah Borjón · Research.
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
