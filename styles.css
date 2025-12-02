@@ -176,14 +176,27 @@ main {
   align-items: center;
 }
 
+/* MEDIA PANEL (VIDEO / IMAGE) */
 .hero-media {
   position: relative;
   border-radius: 26px;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
+  min-height: 320px;              /* 👈 gives it real height */
+  background: #000;               /* fallback if video fails */
 }
 
-.hero-media video,
+/* Make the <video> fully cover the card */
+.hero-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Keep this for static images if you ever swap */
 .hero-media img {
   width: 100%;
   height: 100%;
@@ -191,6 +204,7 @@ main {
   display: block;
 }
 
+/* Overlay + badge on top of video */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -215,6 +229,8 @@ main {
   background: rgba(247, 241, 222, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
+
+/* TEXT SIDE */
 
 .hero-content {
   display: flex;
@@ -281,6 +297,18 @@ main {
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    min-height: 220px;
+  }
+}
+
 
 /* Landing page quick-links */
 
