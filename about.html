@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elijah Borjón | About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="page">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-main"><span>Elijah</span> Borjón</div>
+          <div class="brand-sub">Research · Music · Portfolio</div>
+        </div>
+        <nav class="site-nav">
+          <a href="index.html" data-page="index.html">Home</a>
+          <a href="research.html" data-page="research.html">Research</a>
+          <a href="arts.html" data-page="arts.html">Arts</a>
+          <a href="about.html" data-page="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-section--top page-section">
+        <div class="section-eyebrow">About</div>
+        <h1 class="section-title">A bit more about me.</h1>
+
+        <div class="bio-layout">
+          <div class="bio-main">
+            <p>
+              I’m Elijah — a student researcher and musician who grew up translating: between Spanish
+              and English, between adults and institutions, between complex systems and the people
+              most affected by them. Medical forms, legal documents, and school emails came to our
+              house in one language; my job was to turn them into something my family could act on.
+            </p>
+            <p>
+              That role quietly shaped how I think about science and art. Research feels incomplete
+              if the people it’s about can’t access it. Music feels incomplete if it doesn’t leave
+              room for other people’s stories. So whether I’m writing about stress pathways in cancer
+              or playing piano in a rehearsal room, I’m always thinking about translation and care.
+            </p>
+            <p>
+              This website is a small snapshot of that work in progress: the projects that have taught
+              me something, the images and sounds that stayed with me, and the questions I’m still
+              trying to ask well.
+            </p>
+          </div>
+
+          <aside class="bio-side">
+            <strong>Current interests</strong>
+            <ul>
+              <li>Stress and inflammation in reproductive cancers</li>
+              <li>Ecology and climate resilience in Northern California</li>
+              <li>Music as a practice of attention and community</li>
+              <li>Making complex systems legible to the people they affect</li>
+            </ul>
+
+            <br />
+            <strong>Outside of school</strong>
+            <ul>
+              <li>Playing piano (and saying yes to too many ensembles)</li>
+              <li>Taking photos at concerts, games, and gatherings</li>
+              <li>Spending time with family and the communities that raised me</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © <span id="year"></span> Elijah Borjón · About.
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
