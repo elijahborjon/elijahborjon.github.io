@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elijah Borjón | Arts Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="page">
+    <header class="site-header">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-main"><span>Elijah</span> Borjón</div>
+          <div class="brand-sub">Research · Music · Portfolio</div>
+        </div>
+        <nav class="site-nav">
+          <a href="index.html" data-page="index.html">Home</a>
+          <a href="research.html" data-page="research.html">Research</a>
+          <a href="arts.html" data-page="arts.html">Arts</a>
+          <a href="about.html" data-page="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-section--top page-section">
+        <div class="section-eyebrow">Arts Portfolio</div>
+        <h1 class="section-title">Concert and sports photography.</h1>
+        <p class="section-intro">
+          A small archive of moments I’ve caught on camera—lights and rehearsals, fields and courts,
+          the in-between spaces where people are fully themselves.
+        </p>
+
+        <div class="tabs">
+          <button
+            class="tab-button tab-button--active"
+            data-tab-target="concert-panel"
+          >
+            Concert
+          </button>
+          <button
+            class="tab-button"
+            data-tab-target="sports-panel"
+          >
+            Sports
+          </button>
+        </div>
+
+        <!-- Concert tab -->
+        <div
+          class="tab-panel tab-panel--active"
+          id="concert-panel"
+        >
+          <div class="gallery-grid">
+            <!-- Replace with your own images in /assets -->
+            <div class="gallery-item">
+              <img src="assets/concert1.jpg" alt="Concert photo 1" />
+              <div class="gallery-caption">Piano & stage lighting</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/concert2.jpg" alt="Concert photo 2" />
+              <div class="gallery-caption">Choir in performance</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/concert3.jpg" alt="Concert photo 3" />
+              <div class="gallery-caption">Rehearsal in progress</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sports tab -->
+        <div class="tab-panel" id="sports-panel">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="assets/sports1.jpg" alt="Sports photo 1" />
+              <div class="gallery-caption">Game day focus</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/sports2.jpg" alt="Sports photo 2" />
+              <div class="gallery-caption">In motion</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/sports3.jpg" alt="Sports photo 3" />
+              <div class="gallery-caption">Sideline energy</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © <span id="year"></span> Elijah Borjón · Arts portfolio.
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
