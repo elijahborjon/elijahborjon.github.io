@@ -2,919 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Elijah Borjón | Research & Music</title>
+  <title>Elijah Borjón | Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Elijah Borjón – research, music, and projects at the intersection of biology, space, and community." />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg-main: #02030b;
-      --bg-alt: #050716;
-      --bg-panel: #080a18;
-      --accent: #e9554f;
-      --accent-soft: rgba(233,85,79,0.2);
-      --accent-soft2: rgba(100,180,255,0.18);
-      --text: #f5efe6;
-      --muted: #a1a0b0;
-      --border-subtle: #202233;
-      --highlight: #ffd38b;
-      --radius-card: 18px;
-      --max-width: 1120px;
-      --nav-height: 70px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at 10% -10%, #1d2341 0, #02030b 45%, #000 80%);
-      color: var(--text);
-      cursor: none; /* custom cursor */
-      min-height: 100vh;
-    }
-
-    /* Custom cursor */
-    .cursor {
-      position: fixed;
-      top: 0; left: 0;
-      width: 22px; height: 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.7);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: transform 0.06s ease-out, width 0.2s, height 0.2s, background 0.2s, border 0.2s;
-      z-index: 9999;
-      backdrop-filter: blur(4px);
-    }
-    .cursor.cursor--link {
-      width: 34px;
-      height: 34px;
-      background: radial-gradient(circle at top, var(--accent-soft), transparent);
-      border-color: var(--accent);
-    }
-
-    .page { min-height: 100vh; display: flex; flex-direction: column; }
-
-    /* Header / Nav */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 40;
-      height: var(--nav-height);
-      backdrop-filter: blur(20px);
-      background: linear-gradient(to bottom, rgba(2,3,11,0.96), rgba(2,3,11,0.75), transparent);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 20px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .brand-main {
-      font-family: "Playfair Display", serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .brand-main span {
-      color: var(--highlight);
-    }
-    .brand-sub {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-    }
-
-    nav a {
-      margin-left: 18px;
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding-bottom: 4px;
-      position: relative;
-    }
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0; bottom: 0;
-      width: 0; height: 2px;
-      background: linear-gradient(90deg, var(--accent), #f6b783);
-      border-radius: 999px;
-      transition: width 0.22s ease;
-    }
-    nav a:hover {
-      color: var(--text);
-    }
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    main { flex: 1; }
-
-    section {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 90px 20px;
-      position: relative;
-    }
-
-    /* Hero (JPL-esque) */
-    #home {
-      padding-top: calc(110px + var(--nav-height));
-      padding-bottom: 70px;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
-      gap: 40px;
-      align-items: center;
-      position: relative;
-    }
-
-    /* space background overlay */
-    .hero-bg-orbit {
-      position: absolute;
-      inset: -140px -260px auto auto;
-      background-image:
-        radial-gradient(circle at 10% 10%, rgba(150,180,255,0.32), transparent 60%),
-        radial-gradient(circle at 70% 80%, rgba(233,85,79,0.35), transparent 60%);
-      opacity: 0.65;
-      filter: blur(10px);
-      z-index: -2;
-    }
-    .hero-stars {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.3) 0, transparent 55%),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.22) 0, transparent 60%),
-        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.18) 0, transparent 55%);
-      opacity: 0.16;
-      z-index: -3;
-    }
-
-    .hero-sub {
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.7rem, 4vw, 3.3rem);
-      line-height: 1.12;
-      margin-bottom: 12px;
-    }
-    .hero-title span {
-      background: linear-gradient(120deg, #ffecd2, #fcb69f, #ffd38b);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-kicker {
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 32rem;
-      margin-bottom: 22px;
-      line-height: 1.6;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 26px;
-    }
-    .tag {
-      border-radius: 999px;
-      padding: 5px 11px;
-      font-size: 0.78rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: radial-gradient(circle at top, rgba(255,255,255,0.06), rgba(8,10,24,0.85));
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 9px 18px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      border: 1px solid var(--accent);
-      background: radial-gradient(circle at top left, var(--accent-soft), transparent);
-      color: var(--text);
-      position: relative;
-      overflow: hidden;
-    }
-    .btn::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(255,255,255,0.14), transparent);
-      opacity: 0;
-      transform: translateX(-40%);
-      transition: opacity 0.25s, transform 0.25s;
-    }
-    .btn:hover::after {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-    .btn span {
-      font-size: 1rem;
-      transform: translateY(1px);
-    }
-
-    .btn-secondary {
-      border-color: var(--border-subtle);
-      background: rgba(5,7,18,0.9);
-    }
-
-    .hero-meta {
-      font-size: 0.75rem;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(8,10,24,0.95);
-      font-size: 0.72rem;
-    }
-    .pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: linear-gradient(120deg, #fcb69f, #ffecd2);
-    }
-
-    /* Hero visual like mission cards */
-    .hero-visual {
-      border-radius: 26px;
-      background: linear-gradient(150deg, #050716, #050716 50%, #0c122b);
-      border: 1px solid rgba(255,255,255,0.07);
-      padding: 18px 18px 20px;
-      box-shadow: 0 28px 80px rgba(0,0,0,0.9);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-visual::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.12), transparent 55%),
-        radial-gradient(circle at 70% 120%, rgba(233,85,79,0.36), transparent 55%);
-      opacity: 0.25;
-      mix-blend-mode: screen;
-    }
-    .hero-chip {
-      position: absolute;
-      top: 14px; right: 14px;
-      padding: 6px 10px;
-      background: rgba(3,5,18,0.94);
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.7rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      z-index: 2;
-    }
-    .hero-visual-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-img {
-      border-radius: 18px;
-      min-height: 120px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-      transform-origin: center;
-      transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.6);
-    }
-    .hero-img::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
-    }
-    .hero-img:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.85);
-      filter: saturate(1.1);
-    }
-    .hero-label {
-      position: absolute;
-      left: 14px; bottom: 12px;
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.19em;
-      color: rgba(255,255,255,0.86);
-      z-index: 2;
-    }
-
-    .scroll-cue {
-      position: absolute;
-      bottom: -24px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-    .scroll-cue div {
-      width: 1px; height: 30px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0));
-      position: relative;
-      overflow: hidden;
-    }
-    .scroll-cue div::after {
-      content: "";
-      position: absolute;
-      top: -20px; left: 0;
-      width: 100%; height: 12px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
-      animation: scrollLine 1.5s infinite;
-    }
-    @keyframes scrollLine {
-      to { transform: translateY(28px); }
-    }
-
-    /* Section headers */
-    .section-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      font-size: 0.76rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: 1.7rem;
-      margin-bottom: 10px;
-    }
-    .section-intro {
-      font-size: 0.93rem;
-      color: var(--muted);
-      max-width: 36rem;
-      margin-bottom: 26px;
-      line-height: 1.65;
-    }
-
-    /* angled section backgrounds like strips */
-    .strip {
-      position: relative;
-      background: radial-gradient(circle at top left, #11142c, #050716);
-    }
-    .strip::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(100,180,255,0.16), transparent 40%),
-        linear-gradient(315deg, rgba(233,85,79,0.12), transparent 45%);
-      opacity: 0.8;
-      pointer-events: none;
-    }
-    .strip-inner { position: relative; z-index: 1; }
-
-    /* Cards (Hematogenix-esque tiles) */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 16px;
-    }
-    @media (max-width: 950px) {
-      .hero { grid-template-columns: minmax(0,1fr); }
-      .grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    }
-    @media (max-width: 700px) {
-      .grid { grid-template-columns: minmax(0,1fr); }
-      nav { display: none; }
-      header .nav-inner { justify-content: center; }
-      section { padding: 80px 16px; }
-      #home { padding-top: calc(90px + var(--nav-height)); }
-    }
-
-    .card {
-      position: relative;
-      border-radius: var(--radius-card);
-      padding: 16px 16px 18px;
-      background: linear-gradient(150deg, rgba(255,255,255,0.03), rgba(5,7,24,0.96));
-      border: 1px solid rgba(255,255,255,0.06);
-      overflow: hidden;
-      min-height: 160px;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
-    }
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: -40% 40% 60% -40%;
-      background: radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 60%);
-      opacity: 0;
-      transition: opacity 0.25s ease, transform 0.25s ease;
-      transform: translate3d(-10px,0,0);
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 60px rgba(0,0,0,0.85);
-      border-color: rgba(233,85,79,0.7);
-      background: linear-gradient(150deg, rgba(255,255,255,0.05), rgba(5,7,24,1));
-    }
-    .card:hover::before {
-      opacity: 0.9;
-      transform: translate3d(0,0,0);
-    }
-
-    .card-tag {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 7px;
-    }
-    .card-title {
-      font-size: 1rem;
-      margin-bottom: 8px;
-      font-weight: 500;
-    }
-    .card-body {
-      font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-    .card-meta {
-      font-size: 0.8rem;
-      color: rgba(245,239,230,0.7);
-    }
-
-    /* Two-column sections */
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
-      gap: 28px;
-      align-items: flex-start;
-    }
-    @media (max-width: 900px) {
-      .two-col { grid-template-columns: minmax(0,1fr); }
-    }
-
-    .timeline {
-      border-left: 1px solid rgba(255,255,255,0.1);
-      padding-left: 16px;
-      margin-top: 12px;
-    }
-    .timeline-item {
-      margin-bottom: 16px;
-      position: relative;
-    }
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -9px;
-      top: 4px;
-      width: 9px; height: 9px;
-      border-radius: 999px;
-      background: radial-gradient(circle, #ffd38b, #e9554f);
-    }
-    .timeline-title {
-      font-size: 0.92rem;
-      margin-bottom: 3px;
-    }
-    .timeline-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-    .timeline-body {
-      font-size: 0.84rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* Contact */
-    .contact-card {
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.09);
-      background: linear-gradient(135deg, rgba(100,180,255,0.16), rgba(8,9,24,0.98));
-      padding: 18px 18px 20px;
-      max-width: 540px;
-    }
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 26px;
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-    .contact-field-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-    .contact-field-value {
-      font-size: 0.92rem;
-    }
-
-    footer {
-      padding: 30px 20px 26px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
-      font-size: 0.78rem;
-      text-align: center;
-      background: radial-gradient(circle at top, #0c0f23, #02030b);
-    }
-    footer span { color: rgba(255,255,255,0.7); }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <div class="cursor" id="cursor"></div>
-  <div class="hero-stars"></div>
-
   <div class="page">
-    <header>
+    <header class="site-header">
       <div class="nav-inner">
         <div class="brand">
           <div class="brand-main"><span>Elijah</span> Borjón</div>
-          <div class="brand-sub">Research · Music · Projects</div>
+          <div class="brand-sub">Research · Music · Portfolio</div>
         </div>
-        <nav>
-          <a href="#home" data-link>Home</a>
-          <a href="#research" data-link>Research</a>
-          <a href="#music" data-link>Music</a>
-          <a href="#projects" data-link>Projects</a>
-          <a href="#about" data-link>About</a>
-          <a href="#contact" data-link>Contact</a>
+        <nav class="site-nav">
+          <a href="index.html" data-page="index.html">Home</a>
+          <a href="research.html" data-page="research.html">Research</a>
+          <a href="arts.html" data-page="arts.html">Arts</a>
+          <a href="about.html" data-page="about.html">About</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- HERO -->
-      <section id="home">
-        <div class="hero-bg-orbit"></div>
+      <section class="page-section--top page-section">
         <div class="hero">
-          <div>
-            <div class="hero-sub">Portfolio · GitHub Pages · Live</div>
+          <div class="hero-media">
+            <!-- Replace hero.mp4 & hero-poster.jpg with your own -->
+            <video
+              src="assets/hero.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="assets/hero-poster.jpg"
+            ></video>
+            <div class="hero-overlay"></div>
+            <div class="hero-badge">Portfolio Landing</div>
+          </div>
+
+          <div class="hero-content">
+            <div class="hero-eyebrow">Student · Researcher · Musician</div>
             <h1 class="hero-title">
-              Researcher & pianist exploring the <span>space between biology and sound.</span>
+              Creating work at the intersection of
+              <span>biology, music, and care.</span>
             </h1>
-            <p class="hero-kicker">
-              I work at the intersection of cancer biology, ecology, and community care—while
-              spending thirteen years with the piano learning how sound can hold what language can’t.
+            <p class="hero-text">
+              I study stress pathways in cancer and ecology, and I spend just as much
+              time at the piano as I do with journal articles. This site collects
+              the projects, images, and stories that have shaped me so far.
             </p>
 
-            <div class="hero-tags">
-              <div class="tag">Cancer biology & inflammation pathways</div>
-              <div class="tag">Pepperwood Preserve ecology</div>
-              <div class="tag">Piano · clarinet · choir</div>
-              <div class="tag">Community & family-run engineering</div>
-            </div>
-
-            <div class="hero-actions">
-              <a href="#research" class="btn" data-link>
-                Explore research <span>↗</span>
+            <div class="hero-cta-row">
+              <a href="research.html" class="btn">
+                View research <span>↗</span>
               </a>
-              <a href="#music" class="btn btn-secondary" data-link>
-                Listen in <span>♪</span>
+              <a href="arts.html" class="btn btn-secondary">
+                See the arts portfolio <span>★</span>
               </a>
             </div>
 
             <div class="hero-meta">
-              <div class="pill">
-                <div class="pill-dot"></div>
-                <span>Student researcher & musician</span>
-              </div>
-              <span>Built from scratch on GitHub Pages.</span>
-            </div>
-          </div>
-
-          <aside class="hero-visual">
-            <div class="hero-chip">Signal · Structure · Sound</div>
-            <div class="hero-visual-grid">
-              <div class="hero-img" style="background-image:url('assets/piano.jpg');">
-                <div class="hero-label">Piano</div>
-              </div>
-              <div class="hero-img" style="background-image:url('assets/microbiology.jpg');">
-                <div class="hero-label">Microbiology</div>
-              </div>
-              <div class="hero-img" style="background-image:url('assets/pepperwood.jpg');">
-                <div class="hero-label">Pepperwood</div>
-              </div>
-              <div class="hero-img" style="background-image:url('assets/electrical.jpg');">
-                <div class="hero-label">Field & Family</div>
-              </div>
-            </div>
-            <div class="scroll-cue">
-              <span>Scroll to explore</span>
-              <div></div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- RESEARCH (strip like Hematogenix hero tiles) -->
-      <section id="research" class="strip">
-        <div class="strip-inner">
-          <div class="section-eyebrow">Research</div>
-          <h2 class="section-title">Biology as a language of stress and adaptation.</h2>
-          <p class="section-intro">
-            My work spans cancer biology, stress pathways, and ecology—from CXCR2-dependent inflammation
-            in reproductive cancers to monitoring butterflies as indicators of ecosystem health.
-          </p>
-
-          <div class="grid">
-            <article class="card">
-              <div class="card-tag">Cancer Biology · Pioneer Academics</div>
-              <h3 class="card-title">CXCR2-mediated stress & inflammation in Central American reproductive cancers</h3>
-              <p class="card-body">
-                Literature-based investigation of how chronic stress, migration, and under-resourced
-                health systems intersect with CXCR2 signaling in cervical and ovarian cancers.
-              </p>
-              <div class="card-meta">
-                Manuscript archived on Zenodo · mentored by Prof. Engda Hagos.
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-tag">Ecology · Pepperwood Preserve</div>
-              <h3 class="card-title">Butterflies as living climate sensors</h3>
-              <p class="card-body">
-                Developed open-source field guides for local students, using butterflies as an
-                accessible entry into climate change, habitat loss, and data literacy.
-              </p>
-              <div class="card-meta">
-                Community science · outdoor education · Spanish-English materials.
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-tag">Future Directions</div>
-              <h3 class="card-title">Stress biology across cells, bodies, and communities</h3>
-              <p class="card-body">
-                Ongoing interests include maternal stress, neuroinflammation, and how social determinants of
-                health map onto molecular pathways in marginalized communities.
-              </p>
-              <div class="card-meta">
-                Seeking work that links bench science with public health and policy.
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- MUSIC -->
-      <section id="music">
-        <div class="two-col">
-          <div>
-            <div class="section-eyebrow">Music</div>
-            <h2 class="section-title">Holding complexity in sound.</h2>
-            <p class="section-intro">
-              Music is where I practice the kind of attention I want in the lab—patient, precise, and deeply human.
-              I’ve studied piano for over thirteen years alongside clarinet, chamber music, and choir.
-            </p>
-
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-title">Piano · 13+ years</div>
-                <div class="timeline-meta">Repertoire from Debussy to Schubert; classical focus with jazz explorations.</div>
-                <div class="timeline-body">
-                  Preparing dual-track auditions and exploring how harmony mirrors biological systems:
-                  tension, release, and unexpected resolutions.
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-title">Choir & Chamber Ensembles</div>
-                <div class="timeline-meta">Tenor section work · touring performances · community concerts.</div>
-                <div class="timeline-body">
-                  Ensemble music has taught me how to listen laterally—adjusting to others in real time,
-                  the way cells respond to signals in a shared environment.
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-title">Sound as a way of knowing</div>
-                <div class="timeline-meta">Improvisation · arranging · mentorship.</div>
-                <div class="timeline-body">
-                  I think of each piece like a small experiment: constraints, hypotheses, variations,
-                  and the emotional data we collect by playing.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="card">
-              <div class="card-tag">Selected Recordings</div>
-              <p class="card-body" style="margin-bottom:10px;">
-                Soon, this panel will embed audio and video from recitals and sessions:
-              </p>
-              <ul style="margin-left:16px; font-size:0.85rem; color:var(--muted); line-height:1.6;">
-                <li>Solo piano works</li>
-                <li>Choir and chamber excerpts</li>
-                <li>Collaborative pieces with friends</li>
-              </ul>
-              <div class="card-meta" style="margin-top:10px;">
-                Demo links and scores are available on request.
-              </div>
+              Built as a light, pastel JPL-inspired landing page with separate tabs
+              for research, arts, and an extended biography.
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- PROJECTS -->
-      <section id="projects" class="strip">
-        <div class="strip-inner">
-          <div class="section-eyebrow">Projects</div>
-          <h2 class="section-title">Where ideas turn into things you can touch.</h2>
-          <p class="section-intro">
-            From a family electrical business to educational tools and web projects,
-            I like work that leaves a mark you can see—on a wall, a website, or a community.
-          </p>
-
-          <div class="grid">
-            <article class="card">
-              <div class="card-tag">Engineering · Family Business</div>
-              <h3 class="card-title">Tech Electric Services</h3>
-              <p class="card-body">
-                Hands-on work with conduit, panel installation, and change orders taught me how
-                design decisions on paper meet constraints in the field.
-              </p>
-              <div class="card-meta">
-                Residential & commercial projects · documentation · client communication.
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-tag">Web & Data</div>
-              <h3 class="card-title">Science storytelling online</h3>
-              <p class="card-body">
-                Building simple, accessible sites to host my research, field guides, and visualizations,
-                with an emphasis on clarity for non-specialists.
-              </p>
-              <div class="card-meta">
-                This portfolio is version 1.0, powered by GitHub Pages and hand-written code.
-              </div>
-            </article>
-
-            <article class="card">
-              <div class="card-tag">Community</div>
-              <h3 class="card-title">Leadership & organizing</h3>
-              <p class="card-body">
-                From student government and affinity programming to wildfire relief fundraising,
-                I care about structures that quietly make life easier for others.
-              </p>
-              <div class="card-meta">
-                Accessibility, translation, and behind-the-scenes work as core forms of care.
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="two-col">
-          <div>
-            <div class="section-eyebrow">About</div>
-            <h2 class="section-title">Why I do this work.</h2>
-            <p class="section-intro">
-              I grew up translating—between languages, systems, and people. Medical forms, legal documents,
-              and school emails arrived at our house in English; my job was to turn them into something my family
-              could act on.
-            </p>
-            <p class="section-intro">
-              That experience shaped how I see science and music: both are powerful, but only if they’re shared
-              in a way others can actually use. This site is one attempt at that—an archive of work at the edge
-              of what I know so far.
-            </p>
-          </div>
-
-          <div>
-            <div class="card">
-              <div class="card-tag">Snapshot</div>
-              <p class="card-body" style="margin-bottom:10px;">
-                Current interests:
-              </p>
-              <ul style="font-size:0.85rem; color:var(--muted); margin-left:16px; line-height:1.6;">
-                <li>Inflammation and stress pathways in cancer and brain health</li>
-                <li>Ecology and climate resilience in Northern California</li>
-                <li>Music education as a tool for access and community building</li>
-                <li>Bridging lab science with policy, design, and storytelling</li>
-              </ul>
-              <div class="card-meta" style="margin-top:12px;">
-                Long term, I hope to work where rigorous biology, creative communication,
-                and community care meet in the same room.
-              </div>
+        <div class="quick-links">
+          <a href="research.html" class="quick-card">
+            <div class="quick-card-tag">Research</div>
+            <div class="quick-card-title">Stress & female reproductive cancer</div>
+            <div class="quick-card-text">
+              Embedded access to my paper on CXCR2, stress, and reproductive cancers in Central America.
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="strip">
-        <div class="strip-inner">
-          <div class="section-eyebrow">Contact</div>
-          <h2 class="section-title">Say hello.</h2>
-          <p class="section-intro">
-            I’m always open to conversations about research, music, mentorship, or collaborations at the
-            edges of disciplines.
-          </p>
-
-          <div class="contact-card">
-            <div class="contact-row">
-              <div>
-                <div class="contact-field-label">Email</div>
-                <div class="contact-field-value">youremail@example.com</div>
-              </div>
-              <div>
-                <div class="contact-field-label">GitHub</div>
-                <div class="contact-field-value">github.com/yourusername</div>
-              </div>
-              <div>
-                <div class="contact-field-label">Location</div>
-                <div class="contact-field-value">Northern California, USA</div>
-              </div>
+          </a>
+          <a href="arts.html" class="quick-card">
+            <div class="quick-card-tag">Arts Portfolio</div>
+            <div class="quick-card-title">Concert & sports photography</div>
+            <div class="quick-card-text">
+              Curated galleries of the images that live at the edge of rehearsal rooms and playing fields.
             </div>
-            <div style="font-size:0.84rem; color:var(--muted);">
-              This portfolio is a living document; new projects, recordings, and research updates will appear here.
+          </a>
+          <a href="about.html" class="quick-card">
+            <div class="quick-card-tag">About</div>
+            <div class="quick-card-title">Who I am beyond the work</div>
+            <div class="quick-card-text">
+              A longer biography about family, translation, music, science, and the questions I’m still asking.
             </div>
-          </div>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer>
-      <span>© <script>document.write(new Date().getFullYear());</script> Elijah Borjón.</span>
-      &nbsp;Built with HTML, CSS, and curiosity on GitHub Pages.
+    <footer class="site-footer">
+      © <span id="year"></span> Elijah Borjón · Built on GitHub Pages.
     </footer>
   </div>
 
+  <script src="main.js"></script>
   <script>
-    // Custom cursor
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-
-    const interactive = document.querySelectorAll('[data-link], a, button');
-    interactive.forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('cursor--link'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor--link'));
-    });
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
