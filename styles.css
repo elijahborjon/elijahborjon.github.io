@@ -46,7 +46,7 @@ body {
   left: 0;
   width: 20px;
   height: 20px;
-  border-radius: 4px;
+  border-radius: 0px;
   border: 1px solid rgba(70, 55, 40, 0.7);
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -134,7 +134,7 @@ body {
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--accent), var(--sand));
-  border-radius: 4px;
+  border-radius: 0px;
   transition: width 0.2s ease;
 }
 
@@ -225,7 +225,7 @@ main {
   letter-spacing: 0.16em;
   color: var(--text-muted);
   padding: 4px 10px;
-  border-radius: 4px;
+  border-radius: 0px;
   background: rgba(247, 241, 222, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -273,7 +273,7 @@ main {
   align-items: center;
   gap: 8px;
   padding: 9px 18px;
-  border-radius: 4px;
+  border-radius: 0px;
   border: 1px solid var(--accent);
   background: linear-gradient(120deg, var(--accent-soft), #fdf7ea);
   font-size: 0.8rem;
@@ -402,7 +402,7 @@ main {
 
 .tabs {
   display: inline-flex;
-  border-radius: 4px;
+  border-radius: 0px;
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 4px;
@@ -412,7 +412,7 @@ main {
 .tab-button {
   border: none;
   background: transparent;
-  border-radius: 4px;
+  border-radius: 0px;
   padding: 6px 16px;
   font-size: 0.84rem;
   cursor: pointer;
@@ -462,7 +462,7 @@ main {
   bottom: 10px;
   padding: 2px 8px;
   font-size: 0.75rem;
-  border-radius: 4px;
+  border-radius: 0px;
   background: rgba(247, 241, 222, 0.9);
   color: var(--text-main);
 }
