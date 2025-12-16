@@ -436,3 +436,41 @@ a{color:inherit}
   .media-card{min-height: 280px}
   .header{top:45px}
 }
+/* ================================
+   Custom Cursor
+================================ */
+
+body {
+  cursor: none; /* hide default cursor */
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(120, 120, 120, 0.25); /* soft gray */
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    background 0.2s ease,
+    opacity 0.2s ease;
+  z-index: 9999;
+}
+
+/* Hover state (links, buttons, cards) */
+.cursor.is-hover {
+  width: 42px;
+  height: 42px;
+  background: rgba(120, 120, 120, 0.18);
+}
+
+/* Hide cursor when leaving window */
+.cursor.is-hidden {
+  opacity: 0;
+}
