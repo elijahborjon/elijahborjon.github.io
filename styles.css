@@ -655,3 +655,37 @@ body {
   .about-grid{grid-template-columns: 1fr}
   .about-main{padding: 18px}
 }
+/* Fix: ensure hidden lightbox is actually hidden */
+.lightbox[hidden] {
+  display: none !important;
+}
+body { cursor: none; }
+
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: rgba(140, 140, 140, 0.22);
+  border: 1px solid rgba(140, 140, 140, 0.55); /* <-- makes it visible */
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10000; /* above everything */
+  opacity: 1;
+}
+
+/* Bigger on hover */
+.cursor.is-hover {
+  width: 42px;
+  height: 42px;
+  background: rgba(140, 140, 140, 0.16);
+}
+
+/* Hide when leaving window */
+.cursor.is-hidden { opacity: 0; }
+
+/* Don’t do custom cursor on touch devices */
+@media (hover: none) {
+  body { cursor: auto; }
+  .cursor { display: none; }
+}
