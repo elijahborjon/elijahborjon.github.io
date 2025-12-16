@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Post Title – Elijah Borjon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Short one-sentence description of the post." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+  <!-- Custom cursor (keep for consistency) -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Announcement bar -->
+  <div class="announce">
+    <div class="announce-inner">
+      <span class="announce-pill">Research</span>
+      <span class="announce-text">Blog & explainers</span>
+      <a class="announce-link" href="/research.html">Back to research →</a>
+    </div>
+  </div>
+
+  <!-- Header (reuse existing header styles) -->
+  <header class="header">
+    <nav class="header-nav">
+      <div class="header-left">
+        <a class="logo" href="/index.html">
+          <span class="logo-mark">EB</span>
+          <span class="logo-text">Elijah Borjon</span>
+        </a>
+      </div>
+
+      <div class="header-links">
+        <a class="navlink" href="/index.html">Home</a>
+        <a class="navlink is-active" href="/research.html">Research</a>
+        <a class="navlink" href="/arts.html">Arts</a>
+        <a class="navlink" href="/about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main article -->
+  <main class="section">
+    <div class="container">
+
+      <!-- Article header -->
+      <div class="mono tag">CXCR2 · Stress · Inflammation</div>
+
+      <h1 class="h2" style="margin-top:14px;">
+        Post title goes here
+      </h1>
+
+      <p class="p" style="max-width:65ch;">
+        One–two sentence abstract explaining what this post does and why it exists.
+      </p>
+
+      <p class="mono" style="margin-top:10px; font-size:12px; color:var(--muted);">
+        December 2025 · 6 min read
+      </p>
+
+      <!-- Divider -->
+      <hr style="margin:32px 0; border:none; border-top:1px solid var(--divider);" />
+
+      <!-- Article body -->
+      <article class="p" style="max-width:68ch;">
+
+        <h3 class="h3">Why this question matters</h3>
+        <p>
+          Start with motivation. Assume an intelligent reader who is not
+          already in your subfield. Keep sentences clean.
+        </p>
+
+        <h3 class="h3">The biological mechanism</h3>
+        <p>
+          Explain CXCR2, stress signaling, inflammation, etc.
+        </p>
+
+        <blockquote style="
+          margin:28px 0;
+          padding:18px 20px;
+          border-left:4px solid var(--bg-green-2);
+          background:var(--oat-2);
+          border-radius:12px;
+        ">
+          <strong>Key idea:</strong> Chronic stress doesn’t just correlate with disease —
+          it alters receptor-level signaling.
+        </blockquote>
+
+        <h3 class="h3">What the paper actually shows</h3>
+        <p>
+          Clarify methods, results, and limits.
+        </p>
+
+        <h3 class="h3">What this doesn’t prove</h3>
+        <p>
+          Explicitly mark uncertainty — this is what makes it research, not hype.
+        </p>
+
+      </article>
+
+      <!-- Footer CTA -->
+      <div class="feature" style="margin-top:48px;">
+        <div class="feature-inner">
+          <div class="feature-kicker">Want the original paper?</div>
+          <div class="feature-title">Read the full PDF</div>
+          <div class="feature-text">
+            This post explains the ideas. The paper contains the full data and citations.
+          </div>
+          <div class="feature-actions">
+            <a class="btn btn-dark" href="/assets/paper.pdf" target="_blank">
+              Open PDF
+            </a>
+            <a class="btn btn-outline" href="/research.html">
+              Back to research
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="fineprint">
+        <div class="fineprint-text">© <span id="year"></span> Elijah Borjon</div>
+        <div class="fineprint-links">
+          <a href="/research.html">Research</a>
+          <a href="/about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
