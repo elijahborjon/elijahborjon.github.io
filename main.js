@@ -1,59 +1,88 @@
-// Custom cursor
-const cursor = document.getElementById("cursor");
+// Mobile menu
+(function () {
+  const btn = document.getElementById("hamburger");
+  const menu = document.getElementById("mobileMenu");
+  if (!btn || !menu) return;
 
-if (cursor) {
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  const setOpen = (open) => {
+    btn.setAttribute("aria-expanded", String(open));
+    menu.hidden = !open;
+  };
+
+  btn.addEventListener("click", () => {
+    const open = btn.getAttribute("aria-expanded") === "true";
+    setOpen(!open);
   });
 
-  const interactive = document.querySelectorAll("a, button, [data-link]");
-  interactive.forEach((el) => {
-    el.addEventListener("mouseenter", () =>
-      cursor.classList.add("cursor--link")
-    );
-    el.addEventListener("mouseleave", () =>
-      cursor.classList.remove("cursor--link")
-    );
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (menu.hidden) return;
+    const within = menu.contains(e.target) || btn.contains(e.target);
+    if (!within) setOpen(false);
   });
-}
 
-// Highlight current nav link
-const navLinks = document.querySelectorAll(".site-nav a[data-page]");
-if (navLinks.length) {
-  const current =
-    window.location.pathname.split("/").pop() || "index.html";
-
-  navLinks.forEach((link) => {
-    if (link.dataset.page === current) {
-      link.classList.add("nav-link--active");
-    }
+  // Close on resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) setOpen(false);
   });
-}
+})();
 
-// Tabs on arts page
-const tabButtons = document.querySelectorAll("[data-tab-target]");
-if (tabButtons.length) {
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const targetId = btn.dataset.tabTarget;
-      const targetPanel = document.getElementById(targetId);
-      if (!targetPanel) return;
+// Hero postfix rotator (Plasmidsaurus-style: multiple postfix spans)
+(function () {
+  const words = Array.from(document.querySelectorAll("[data-main-header-title-postfix]"));
+  if (!words.length) return;
 
-      // update buttons
-      tabButtons.forEach((b) =>
-        b.classList.toggle("tab-button--active", b === btn)
-      );
+  let idx = 0;
+  const activate = (i) => {
+    words.forEach((el, k) => el.classList.toggle("is-active", k === i));
+  };
 
-      // update panels
-      document
-        .querySelectorAll(".tab-panel")
-        .forEach((panel) =>
-          panel.classList.toggle(
-            "tab-panel--active",
-            panel === targetPanel
-          )
-        );
-    });
+  activate(idx);
+
+  setInterval(() => {
+    idx = (idx + 1) % words.length;
+    activate(idx);
+  }, 1600);
+})();
+
+// Simple reveal-on-scroll
+(function () {
+  const items = Array.from(document.querySelectorAll("[data-reveal]"));
+  if (!items.length) return;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  items.forEach((el) => io.observe(el));
+})();
+
+// Text carousel
+(function () {
+  const quotes = Array.from(document.querySelectorAll("[data-quote]"));
+  const prev = document.querySelector("[data-carousel-prev]");
+  const next = document.querySelector("[data-carousel-next]");
+  if (!quotes.length || !prev || !next) return;
+
+  let i = quotes.findIndex((q) => q.classList.contains("is-active"));
+  if (i < 0) i = 0;
+
+  const show = (n) => {
+    quotes.forEach((q, k) => q.classList.toggle("is-active", k === n));
+  };
+
+  prev.addEventListener("click", () => {
+    i = (i - 1 + quotes.length) % quotes.length;
+    show(i);
   });
-}
 
+  next.addEventListener("click", () => {
+    i = (i + 1) % quotes.length;
+    show(i);
+  });
+})();
