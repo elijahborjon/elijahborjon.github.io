@@ -614,6 +614,10 @@ a{color:inherit}
   cursor:pointer;
 }
 
+/* Never show lightbox unless JS opens it (hidden removed) */
+.lightbox[hidden] { display: none !important; }
+}
+
 /* ================================
    About page layout
 ================================ */
