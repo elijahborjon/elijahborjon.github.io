@@ -84,5 +84,45 @@
   next.addEventListener("click", () => {
     i = (i + 1) % quotes.length;
     show(i);
+
+    // Custom cursor
+(function () {
+  const cursor = document.getElementById("cursor");
+  if (!cursor) return;
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  // Track mouse
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.classList.remove("is-hidden");
+  });
+
+  // Smooth follow animation
+  function animate() {
+    currentX += (mouseX - currentX) * 0.18;
+    currentY += (mouseY - currentY) * 0.18;
+
+    cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Hover detection
+  const hoverTargets = "a, button, .btn, .card, .navlink";
+
+  document.querySelectorAll(hoverTargets).forEach((el) => {
+    el.addEventListener("mouseenter", () => cursor.classList.add("is-hover"));
+    el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
+  });
+
+  // Hide cursor when leaving window
+  document.addEventListener("mouseleave", () => cursor.classList.add("is-hidden"));
+})();
+
   });
 })();
