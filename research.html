@@ -1,37 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Elijah Borjon – Research</title>
+    <title>Elijah Borjon – Research Blog</title>
     <meta charset="utf-8" />
     <link rel="canonical" href="https://borjon.earth/research.html" />
     <meta
       name="description"
-      content="Research by Elijah Borjon — stress biology, inflammation, CXCR2, and reproductive cancer."
+      content="Research blog by Elijah Borjon — stress biology, inflammation, CXCR2, and reproductive cancer."
     />
-    <meta name="keywords" content="research,CXCR2,stress,inflammation,reproductive cancer" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="icon" href="/favicon.ico" />
 
-    <meta property="og:title" content="Elijah Borjon – Research" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://borjon.earth/research.html" />
-    <meta
-      property="og:description"
-      content="Stress biology, inflammation, CXCR2, and reproductive cancer."
-    />
-    <meta property="og:site_name" content="Elijah Borjon" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-
-    <!-- Use YOUR stylesheet (you'll need to add styles for these classes, or port the pasted site's CSS equivalents) -->
+    <!-- Use your site stylesheet -->
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body class="" data-barba="wrapper">
-    <!-- Announcement Bar (same layout concept as pasted.txt) -->
+  <body data-barba="wrapper" class="">
+    <!-- Announcement bar (optional; keep if your site uses it) -->
     <div
       class="
         bg-[#FFE8A3E5] text-center py-[16px] px-[20px]
@@ -41,70 +26,53 @@
       aria-label="Announcement"
     >
       <span class="SectionTitle text-green-900">
-        CXCR2, chronic stress biology, and how inflammation shapes outcomes.
+        Research notes, explainers, and projects — CXCR2, stress biology, inflammation.
       </span>
-      <a href="assets/paper.pdf" class="Link" target="_blank" rel="noopener">
-        Open PDF
-      </a>
+      <a href="about.html" class="Link">About</a>
     </div>
 
-    <!-- Fixed Header (mirrors the pasted header structure) -->
-    <header
-      class="Header Header--withAnnouncementBar Header--firstSectionDark"
-      data-header-visible="true"
-    >
-      <nav class="Header-nav" aria-label="Primary">
-        <!-- Logo + Hamburger -->
+    <!-- Fixed Header (keep your nav, but in pasted-template structure) -->
+    <header class="Header Header--withAnnouncementBar" data-header-visible="true">
+      <nav class="Header-nav">
         <div class="Header-logoAndHamburger">
           <div class="Header-logo">
             <a href="index.html" class="Header-logoLink" aria-label="Home">
-              <!-- Simple text logo; swap for SVG if you want -->
               <span class="Header-logoText">Elijah Borjon</span>
             </a>
           </div>
 
-          <button class="Hamburger Header-hamburger" data-hamburger aria-label="Open menu">
+          <button class="Hamburger Header-hamburger" data-hamburger aria-label="Menu">
             <span class="Hamburger-line"></span>
             <span class="Hamburger-line"></span>
             <span class="Hamburger-line"></span>
           </button>
         </div>
 
-        <!-- Shared Dropdown Background (kept for parity) -->
         <div class="Header-dropdownBackground"></div>
 
-        <!-- Navigation -->
-        <div class="Header-navigation">
+        <div class="Header-navigation" data-header-nav>
           <div class="Header-navItem">
-            <a href="index.html" class="Header-navLink" target="_self">Home</a>
+            <a href="index.html" class="Header-navLink">Home</a>
           </div>
+
           <div class="Header-navItem">
-            <a href="research.html" class="Header-navLink" target="_self" aria-current="page"
-              >Research</a
-            >
+            <a href="research.html" class="Header-navLink" aria-current="page">Research</a>
           </div>
+
           <div class="Header-navItem">
-            <a href="arts.html" class="Header-navLink" target="_self">Arts</a>
+            <a href="arts.html" class="Header-navLink">Arts</a>
           </div>
+
           <div class="Header-navItem">
-            <a href="about.html" class="Header-navLink" target="_self">About</a>
+            <a href="about.html" class="Header-navLink">About</a>
           </div>
         </div>
 
-        <!-- CTA buttons (mirrors pasted “Sign In / Order Now” area) -->
         <div class="Header-ctaButton">
           <div class="flex gap-[16px]">
-            <a
-              href="assets/paper.pdf"
-              class="Button Button--dark"
-              target="_blank"
-              rel="noopener"
-            >
-              Open PDF
-            </a>
-
-            <a href="about.html" class="Button Button--neon" target="_self">
-              About me
+            <a href="about.html" class="Button Button--dark">About</a>
+            <a href="contact.html" class="Button Button--neon">
+              Contact
               <svg xmlns="http://www.w3.org/2000/svg" width="6" height="7" viewBox="0 0 6 7" fill="none">
                 <path
                   d="M5.01037 4.9934V1.05184L5.64939 1.09142L0.735155 6.01131L0 5.27615L4.91423 0.361923L4.96513 1.00094H1.0066V0L6 0.0113101V4.9934H5.01037Z"
@@ -120,31 +88,24 @@
     <div class="flex flex-col min-h-screen">
       <main id="main-content" data-barba="container" class="flex-1">
         <div class="PageSections">
-          <!-- Dark hero header section + search (matches pasted layout) -->
+          <!-- (Optional) Dark hero header like the resource center pages -->
           <section
             class="
-              PageSection PageSection--resourceHeader relative px-[28px] py-[48px] bg-green-900
+              PageSection PageSection--resourceHeader relative px-[28px] py-[48px]
               md:py-[80px] mb-[40px] md:mb-[60px]
             "
           >
-            <div
-              class="
-                PageSection-container flex flex-col items-center w-full gap-[40px]
-              "
-            >
-              <h2 class="Heading-1 text-accent-2">Research</h2>
+            <div class="PageSection-container flex flex-col items-center w-full gap-[26px]">
+              <h1 class="Heading-2 text-green-900">Blog</h1>
 
-              <!-- Search (optional but matches pasted structure) -->
-              <form class="SearchForm" action="search.html" method="get">
+              <!-- Optional search bar; you can wire this later -->
+              <form class="SearchForm" action="search.html" method="get" aria-label="Search blog">
                 <input type="text" name="q" placeholder="Keyword Search" />
                 <button type="submit" aria-label="Search">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
                     <path
                       d="M16.5 16L12.875 12.375M14.8333 7.66667C14.8333 11.3486 11.8486 14.3333 8.16667 14.3333C4.48477 14.3333 1.5 11.3486 1.5 7.66667C1.5 3.98477 4.48477 1 8.16667 1C11.8486 1 14.8333 3.98477 14.8333 7.66667Z"
-                      stroke="#CECECE"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      stroke="#CECECE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                     />
                   </svg>
                 </button>
@@ -152,39 +113,26 @@
             </div>
           </section>
 
-          <!-- Tabs + filters + content grid -->
-          <div
-            class="PageSection pb-[32px] md:pb-[46px] md:pb-[100px]"
-            data-init-section="Reveal,ResourceFilters"
-          >
-            <div class="PageSection-container flex flex-col gap-[32px] md:gap-[60px]">
-              <div class="w-full relative flex flex-col md:block gap-[16px]">
-                <!-- Tabs row (mirrors pasted Tabs) -->
+          <!-- Tabs + Filter + Grid -->
+          <div class="PageSection pb-[32px] md:pb-[60px]" data-init-section="Reveal">
+            <div class="PageSection-container flex flex-col gap-[28px] md:gap-[48px]">
+              <!-- Tabs row + Filter button -->
+              <div class="w-full relative flex flex-col md:block gap-[14px]">
                 <div class="flex justify-center mx-[-16px] md:mx-0" data-resource-nav>
-                  <div
-                    class="
-                      w-full overflow-x-scroll pl-[16px] pr-[16px] no-scrollbar
-                      md:overflow-x-auto md:pr-0 md:pl-0 md:justify-center md:flex
-                    "
-                  >
+                  <div class="w-full overflow-x-scroll pl-[16px] pr-[16px] no-scrollbar md:overflow-x-auto md:pr-0 md:pl-0 md:justify-center md:flex">
                     <div class="Tabs">
                       <a href="research.html" class="Tabs-tab" data-tab-active="true">
                         <div class="Tabs-tabText">All</div>
                       </a>
-                      <a href="#papers" class="Tabs-tab">
-                        <div class="Tabs-tabText">Papers</div>
-                      </a>
-                      <a href="#projects" class="Tabs-tab">
-                        <div class="Tabs-tabText">Projects</div>
-                      </a>
-                      <a href="#posts" class="Tabs-tab">
-                        <div class="Tabs-tabText">Posts</div>
-                      </a>
+                      <a href="#cxcr2" class="Tabs-tab"><div class="Tabs-tabText">CXCR2</div></a>
+                      <a href="#stress" class="Tabs-tab"><div class="Tabs-tabText">Stress</div></a>
+                      <a href="#inflammation" class="Tabs-tab"><div class="Tabs-tabText">Inflammation</div></a>
+                      <a href="#methods" class="Tabs-tab"><div class="Tabs-tabText">Methods</div></a>
+                      <a href="#notes" class="Tabs-tab"><div class="Tabs-tabText">Notes</div></a>
                     </div>
                   </div>
                 </div>
 
-                <!-- Filter dropdown (structure copied; options adapted to you) -->
                 <div class="md:absolute top-0 right-0">
                   <div class="relative" data-resource-filters>
                     <button
@@ -192,9 +140,11 @@
                       class="
                         Caption text-green-900 flex items-center gap-[8px]
                         border border-accent-6 rounded-[8px]
-                        p-[6px] px-[8px] font-mono font-bold cursor-pointer text-[16px]
+                        p-[6px] px-[10px] font-mono font-bold cursor-pointer text-[16px]
                       "
                       type="button"
+                      aria-expanded="false"
+                      aria-controls="filtersPanel"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
                         <path d="M14.6667 8.33331H3" stroke="#A4A4A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -202,183 +152,134 @@
                         <path d="M18 11.6667H3" stroke="#A4A4A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M14.6667 15H3" stroke="#A4A4A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
-                      Filter
+                      Filter by topic
                     </button>
 
                     <div
+                      id="filtersPanel"
                       data-resource-filters-content
                       class="
-                        hidden flex flex-col gap-[16px] bg-white w-[240px] absolute
-                        top-[44px] left-0 md:top-[44px] md:right-0 md:left-auto
+                        hidden flex flex-col gap-[14px] bg-white w-[240px] absolute
+                        top-[44px] left-0 md:right-0 md:left-auto
                         rounded-[8px] border border-accent-6 p-[16px] z-10
                       "
                     >
                       <div class="flex items-center gap-[8px]">
-                        <input type="checkbox" id="stress" name="stress" value="stress" />
-                        <label class="text-green-900 font-sans text-base cursor-pointer" for="stress"
-                          >Stress</label
-                        >
+                        <input type="checkbox" id="f-cxcr2" value="cxcr2" />
+                        <label class="text-green-900 font-sans text-base cursor-pointer" for="f-cxcr2">CXCR2</label>
                       </div>
                       <div class="flex items-center gap-[8px]">
-                        <input type="checkbox" id="inflammation" name="inflammation" value="inflammation" />
-                        <label class="text-green-900 font-sans text-base cursor-pointer" for="inflammation"
-                          >Inflammation</label
-                        >
+                        <input type="checkbox" id="f-stress" value="stress" />
+                        <label class="text-green-900 font-sans text-base cursor-pointer" for="f-stress">Stress</label>
                       </div>
                       <div class="flex items-center gap-[8px]">
-                        <input type="checkbox" id="cxcr2" name="cxcr2" value="cxcr2" />
-                        <label class="text-green-900 font-sans text-base cursor-pointer" for="cxcr2"
-                          >CXCR2</label
-                        >
+                        <input type="checkbox" id="f-inflammation" value="inflammation" />
+                        <label class="text-green-900 font-sans text-base cursor-pointer" for="f-inflammation">Inflammation</label>
+                      </div>
+                      <div class="flex items-center gap-[8px]">
+                        <input type="checkbox" id="f-methods" value="methods" />
+                        <label class="text-green-900 font-sans text-base cursor-pointer" for="f-methods">Methods</label>
                       </div>
 
-                      <div>
-                        <button data-resource-filters-clear class="Link" type="button">
-                          Clear all filters
-                        </button>
-                      </div>
+                      <button data-resource-filters-clear class="Link text-left" type="button">
+                        Clear all filters
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Main content area -->
-              <div class="resource-content-area">
-                <div
-                  class="flex flex-col items-center justify-start gap-[40px]"
-                  data-reveal-item
+              <!-- Card Grid (placeholders) -->
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[31px] gap-y-[32px] md:gap-y-[60px]"
+                data-post-grid
+              >
+                <!-- CARD 1 -->
+                <a
+                  href="blog/cxcr2-stress-inflammation.html"
+                  class="
+                    bg-white rounded-[16px] overflow-hidden border border-black/10
+                    hover:border-black/20 transition-border duration-300 no-underline
+                    shadow-[0px_4px_8px_0px_rgba(0,0,0,0.02),_0px_6px_12px_0px_rgba(0,0,0,0.03)]
+                    group
+                  "
+                  data-tags="cxcr2 stress inflammation"
                 >
-                  <h1 class="Heading-2 text-green-900">Featured</h1>
-
-                  <!-- Card grid (mirrors pasted cards) -->
-                  <div
-                    class="
-                      grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-                      gap-x-[31px] gap-y-[32px] md:gap-y-[60px]
-                    "
-                    id="papers"
-                  >
-                    <!-- Paper card -->
-                    <a
-                      href="assets/paper.pdf"
-                      target="_blank"
-                      rel="noopener"
-                      class="
-                        bg-white rounded-[16px]
-                        overflow-hidden border border-black/10
-                        hover:border-black/20
-                        transition-border duration-300
-                        no-underline
-                        shadow-[0px_4px_8px_0px_rgba(0,0,0,0.02),_0px_6px_12px_0px_rgba(0,0,0,0.03)]
-                        group
-                      "
-                    >
-                      <!-- Optional image header; replace src with your own thumbnail -->
-                      <img
-                        class="aspect-[3/2] object-cover object-center"
-                        src="assets/research-thumb.jpg"
-                        width="1200"
-                        height="800"
-                        alt="Research paper thumbnail"
-                        loading="lazy"
-                      />
-
-                      <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                          <div class="text-link font-mono">Paper</div>
-
-                          <div class="flex justify-end items-center gap-1">
-                            <div
-                              class="
-                                bg-divider-1 text-green-900 text-link font-mono
-                                p-1 px-3 rounded-[44px]
-                              "
-                            >
-                              PDF
-                            </div>
-                          </div>
-                        </div>
-
-                        <h3 class="SectionTitle text-green-900">
-                          Stress, inflammation, and CXCR2-mediated outcomes in female reproductive cancers
-                        </h3>
-                      </div>
-                    </a>
-
-                    <!-- Add more cards here (projects/posts) -->
-                    <a
-                      href="research-notes.html"
-                      class="
-                        bg-white rounded-[16px]
-                        overflow-hidden border border-black/10
-                        hover:border-black/20
-                        transition-border duration-300
-                        no-underline
-                        shadow-[0px_4px_8px_0px_rgba(0,0,0,0.02),_0px_6px_12px_0px_rgba(0,0,0,0.03)]
-                        group
-                      "
-                    >
-                      <img
-                        class="aspect-[3/2] object-cover object-center"
-                        src="assets/notes-thumb.jpg"
-                        width="1200"
-                        height="800"
-                        alt="Research notes thumbnail"
-                        loading="lazy"
-                      />
-
-                      <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                          <div class="text-link font-mono">Notes</div>
-                          <div class="flex justify-end items-center gap-1">
-                            <div
-                              class="
-                                bg-divider-1 text-green-900 text-link font-mono
-                                p-1 px-3 rounded-[44px]
-                              "
-                            >
-                              Blog
-                            </div>
-                          </div>
-                        </div>
-
-                        <h3 class="SectionTitle text-green-900">
-                          Research notes & explainers
-                        </h3>
-                      </div>
-                    </a>
-                  </div>
-
-                  <!-- Inline PDF viewer section (kept from your original page, but styled to live here) -->
-                  <section class="w-full" aria-label="Embedded paper">
-                    <div class="paper-shell">
-                      <div class="paper-bar">
-                        <div class="paper-title mono">paper.pdf</div>
-                        <div class="paper-actions">
-                          <a class="Button Button--light" href="assets/paper.pdf" target="_blank" rel="noopener">
-                            Open in new tab ↗
-                          </a>
-                          <a class="Button Button--outline" href="assets/paper.pdf" download>
-                            Download
-                          </a>
-                        </div>
-                      </div>
-
-                      <iframe
-                        class="paper-frame"
-                        src="assets/paper.pdf"
-                        title="Research paper PDF"
-                      ></iframe>
+                  <img
+                    src="assets/blog/placeholder-1.png"
+                    alt="Placeholder cover"
+                    class="aspect-[3/2] object-cover object-center w-full"
+                    loading="lazy"
+                  />
+                  <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                      <span class="Link text-paragraph">Dec 2025</span>
+                      <span class="bg-divider-1 text-green-900 text-link font-mono p-1 px-3 rounded-[44px]">
+                        CXCR2
+                      </span>
                     </div>
-                  </section>
-                </div>
+                    <h3 class="SectionTitle text-green-900">
+                      CXCR2 + chronic stress: a mechanistic map (placeholder)
+                    </h3>
+                  </div>
+                </a>
+
+                <!-- CARD 2 -->
+                <a
+                  href="blog/paper-explainer-01.html"
+                  class="bg-white rounded-[16px] overflow-hidden border border-black/10 hover:border-black/20 transition-border duration-300 no-underline shadow-[0px_4px_8px_0px_rgba(0,0,0,0.02),_0px_6px_12px_0px_rgba(0,0,0,0.03)] group"
+                  data-tags="methods notes"
+                >
+                  <img
+                    src="assets/blog/placeholder-2.png"
+                    alt="Placeholder cover"
+                    class="aspect-[3/2] object-cover object-center w-full"
+                    loading="lazy"
+                  />
+                  <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                      <span class="Link text-paragraph">Dec 2025</span>
+                      <span class="bg-divider-1 text-green-900 text-link font-mono p-1 px-3 rounded-[44px]">
+                        Notes
+                      </span>
+                    </div>
+                    <h3 class="SectionTitle text-green-900">
+                      How I read papers fast (and don’t miss mechanisms) (placeholder)
+                    </h3>
+                  </div>
+                </a>
+
+                <!-- CARD 3 -->
+                <a
+                  href="blog/central-america-context.html"
+                  class="bg-white rounded-[16px] overflow-hidden border border-black/10 hover:border-black/20 transition-border duration-300 no-underline shadow-[0px_4px_8px_0px_rgba(0,0,0,0.02),_0px_6px_12px_0px_rgba(0,0,0,0.03)] group"
+                  data-tags="stress inflammation"
+                >
+                  <img
+                    src="assets/blog/placeholder-3.png"
+                    alt="Placeholder cover"
+                    class="aspect-[3/2] object-cover object-center w-full"
+                    loading="lazy"
+                  />
+                  <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                      <span class="Link text-paragraph">Dec 2025</span>
+                      <span class="bg-divider-1 text-green-900 text-link font-mono p-1 px-3 rounded-[44px]">
+                        Stress
+                      </span>
+                    </div>
+                    <h3 class="SectionTitle text-green-900">
+                      Why stress biology matters in Central America (placeholder)
+                    </h3>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </main>
 
-      <!-- Footer (mirrors pasted footer layout, with your links) -->
+      <!-- Footer -->
       <footer class="Footer">
         <div class="Footer-container">
           <div class="Footer-containerInner">
@@ -393,13 +294,9 @@
 
             <div class="Footer-c">
               <div class="Footer-finePrint">
-                <div class="Footer-finePrintText">
-                  © <span id="year"></span> Elijah Borjon
-                </div>
-
+                <div class="Footer-finePrintText">© <span id="year"></span> Elijah Borjon</div>
                 <div class="Footer-finePrintLinks">
                   <a href="about.html">Contact</a>
-                  <a href="assets/paper.pdf" target="_blank" rel="noopener">Paper</a>
                 </div>
               </div>
             </div>
@@ -408,14 +305,59 @@
       </footer>
     </div>
 
-    <!-- JS: keep your existing file; you’ll likely need to add handlers for:
-         - [data-hamburger] menu toggle
-         - [data-resource-filters-toggle] open/close
-         - [data-resource-filters-clear] clear checkboxes
-    -->
-    <script src="main.js"></script>
     <script>
+      // year
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // filter dropdown toggle (matches pasted data-attributes style)
+      (function () {
+        const wrap = document.querySelector("[data-resource-filters]");
+        if (!wrap) return;
+
+        const btn = wrap.querySelector("[data-resource-filters-toggle]");
+        const panel = wrap.querySelector("[data-resource-filters-content]");
+        const clearBtn = wrap.querySelector("[data-resource-filters-clear]");
+        const checks = Array.from(panel.querySelectorAll('input[type="checkbox"]'));
+        const grid = document.querySelector("[data-post-grid]");
+
+        function openPanel(open) {
+          panel.classList.toggle("hidden", !open);
+          btn.setAttribute("aria-expanded", String(open));
+        }
+
+        btn?.addEventListener("click", () => openPanel(panel.classList.contains("hidden")));
+        document.addEventListener("click", (e) => {
+          if (!wrap.contains(e.target)) openPanel(false);
+        });
+
+        function applyFilters() {
+          if (!grid) return;
+          const active = checks.filter(c => c.checked).map(c => c.value);
+          const cards = Array.from(grid.querySelectorAll("a[data-tags]"));
+
+          // if none selected, show all
+          if (active.length === 0) {
+            cards.forEach(c => (c.style.display = ""));
+            return;
+          }
+
+          cards.forEach(card => {
+            const tags = (card.getAttribute("data-tags") || "").split(/\s+/).filter(Boolean);
+            const show = active.every(t => tags.includes(t));
+            card.style.display = show ? "" : "none";
+          });
+        }
+
+        checks.forEach(c => c.addEventListener("change", applyFilters));
+
+        clearBtn?.addEventListener("click", () => {
+          checks.forEach(c => (c.checked = false));
+          applyFilters();
+        });
+      })();
     </script>
+
+    <!-- If your site already has a main.js, include it (after inline is fine) -->
+    <script src="main.js"></script>
   </body>
 </html>
