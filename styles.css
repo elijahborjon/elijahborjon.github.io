@@ -944,3 +944,13 @@ a{color:inherit}
 .Footer-finePrintLinks{display:flex; gap:14px; flex-wrap:wrap}
 .Footer-finePrintLinks a{color: rgba(11,28,16,.75); text-decoration:none}
 .Footer-finePrintLinks a:hover{text-decoration:underline}
+/* =========================================================
+   Cursor fallback for pages without custom cursor element
+   (ADD ONLY — do not modify existing cursor system)
+========================================================= */
+
+/* If the page does NOT have #cursor, restore native cursor */
+body:not(:has(#cursor)),
+body:not(:has(#cursor)) * {
+  cursor: auto !important;
+}
