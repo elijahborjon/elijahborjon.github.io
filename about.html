@@ -3,104 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <title>Elijah Borjon | About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="description" content="About Elijah Borjon — research, music, photography, and translation." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico" />
 </head>
+
 <body>
+  <!-- Custom cursor -->
   <div class="cursor" id="cursor"></div>
-  <div class="page">
-    <header class="site-header">
-      <div class="nav-inner">
-        <div class="brand">
-          <div class="brand-main"><span>Elijah</span> Borjon</div>
-          <div class="brand-sub">Research · Music · Portfolio</div>
-        </div>
-        <nav class="site-nav">
-          <a href="index.html" data-page="index.html">Home</a>
-          <a href="research.html" data-page="research.html">Research</a>
-          <a href="arts.html" data-page="arts.html">Arts</a>
-          <a href="about.html" data-page="about.html">About</a>
-        </nav>
+
+  <!-- Announcement Bar -->
+  <div class="announce" role="region" aria-label="Announcement">
+    <div class="announce-inner">
+      <span class="announce-pill">About</span>
+      <span class="announce-text">Translation, attention, and building work that crosses barriers.</span>
+      <a class="announce-link" href="arts.html">See photos →</a>
+    </div>
+  </div>
+
+  <!-- Fixed Header -->
+  <header class="header" data-header-visible="true">
+    <nav class="header-nav" aria-label="Primary">
+      <div class="header-left">
+        <a class="logo" href="index.html" aria-label="Elijah Borjon home">
+          <span class="logo-mark">EB</span>
+          <span class="logo-text">Elijah Borjon</span>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </header>
 
-    <main>
-      <section class="page-section--top page-section">
-        <div class="section-eyebrow">About</div>
-        <h1 class="section-title">A bit more about me.</h1>
+      <div class="header-links" id="desktopLinks">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="research.html">Research</a>
+        <a class="navlink" href="arts.html">Arts</a>
+        <a class="navlink is-active" href="about.html">About</a>
+      </div>
 
-       <div class="bio-layout">
-  <div class="bio-main">
-    <p>
-      I’m Elijah, a student, musician, and person who has always lived in the space 
-      between worlds. I grew up translating for my family: medical updates, legal notices, school 
-      emails, anything that arrived in English but needed to be lived in Spanish. Those moments became 
-      the root of how I think about knowledge: if information can’t cross a barrier, 
-      linguistic, educational, or emotional, then it may as well not exist. That belief still shapes everything I do. 
-    </p>
+      <div class="header-cta">
+        <a class="btn btn-dark" href="research.html">Research</a>
+        <a class="btn btn-neon" href="arts.html">Portfolio</a>
+      </div>
+    </nav>
 
-    <p>
-      Curiosity is my default setting. I’m the kid who once pulled apart a fallen strand of beard moss 
-      just to figure out why a plant might need a tendon, freezing mid-trail with a damp white filament 
-      stretched between my fingers and a dozen new questions unfurling in my head 
-      That same instinct shows up now in research, in music, and in photography. I think paying attention to people, to 
-      ecosystems, to patterns, is my love language.
-    </p>
+    <!-- Mobile menu -->
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="mobile-inner">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="research.html">Research</a>
+        <a class="mobile-link" href="arts.html">Arts</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <div class="mobile-cta">
+          <a class="btn btn-dark" href="research.html">Research</a>
+          <a class="btn btn-neon" href="arts.html">Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <p>
-      In my research, I follow the questions that tug at me, even when they look “meaningless” to 
-      everyone else, like why a yoga study might downregulate a receptor involved in chronic stress 
-      and cancer. Chasing those rabbit holes transformed my understanding of what it means to do science: 
-      not to be the smartest person in the room, but the one willing to stay with a hard question until it 
-      becomes clear enough for someone else to use 
-       
-    </p>
+  <main id="main-content">
+    <section class="section section-oat" data-reveal>
+      <div class="container">
+        <div class="tag mono">About</div>
+        <h1 class="h2" style="margin-top:12px;">A bit more about me.</h1>
 
-    <p>
-      Music and the arts shape the other half of my education. Whether I’m at a piano, in a rehearsal room, or taking 
-      photos from the sidelines of a lacrosse field, I’m always looking for the small human moments, the tired defender 
-      leaning on his long pole, the soft rustle of choir folders, the breath before a downbeat. Art, like science, is 
-      translation: turning attention into something that can be felt.
-    </p>
+        <div class="about-grid" style="margin-top:18px;">
+          <article class="about-main">
+            <p>
+              I’m Elijah, a student, musician, and person who has always lived in the space
+              between worlds. I grew up translating for my family: medical updates, legal notices, school
+              emails, anything that arrived in English but needed to be lived in Spanish. Those moments became
+              the root of how I think about knowledge: if information can’t cross a barrier,
+              linguistic, educational, or emotional, then it may as well not exist. That belief still shapes everything I do.
+            </p>
 
-    <p>
-      This website is a small snapshot of all of that: the questions I’m asking, the work I’m building, 
-      the people and places that raised me, and the worlds I’m trying to live in with a little more care.
-    </p>
-  </div>
+            <p>
+              Curiosity is my default setting. I’m the kid who once pulled apart a fallen strand of beard moss
+              just to figure out why a plant might need a tendon, freezing mid-trail with a damp white filament
+              stretched between my fingers and a dozen new questions unfurling in my head
+              That same instinct shows up now in research, in music, and in photography. I think paying attention to people, to
+              ecosystems, to patterns, is my love language.
+            </p>
 
-  <aside class="bio-side">
-    <strong>Current interests</strong>
-    <ul>
-      <li>Stress & inflammation in female reproductive cancers</li>
-      <li>How chronic stress interacts with the CXCR2 pathway</li>
-      <li>Ecology, moss, and climate change in Northern California</li>
-      <li>Astronomy and Astrophysics</li>
-      <li>Music (Romantic-Era), Rachmaninoff</li>
-      <li>Nicoya</li>
-    </ul>
+            <p>
+              In my research, I follow the questions that tug at me, even when they look “meaningless” to
+              everyone else, like why a yoga study might downregulate a receptor involved in chronic stress
+              and cancer. Chasing those rabbit holes transformed my understanding of what it means to do science:
+              not to be the smartest person in the room, but the one willing to stay with a hard question until it
+              becomes clear enough for someone else to use
+            </p>
 
-    <br />
-    <strong>Outside of school</strong>
-    <ul>
-      <li>Playing piano</li>
-      <li>Lacrosse</li>
-      <li>Soccer</li>
-      <li>Photography</li>
-      <li>Hikes with friends</li>
-      <li>Meeting new people</li>
-      <li>Hanging out with my dog, Paris (shes fake)</li>
-    </ul>
-  </aside>
-</div>
+            <p>
+              Music and the arts shape the other half of my education. Whether I’m at a piano, in a rehearsal room, or taking
+              photos from the sidelines of a lacrosse field, I’m always looking for the small human moments, the tired defender
+              leaning on his long pole, the soft rustle of choir folders, the breath before a downbeat. Art, like science, is
+              translation: turning attention into something that can be felt.
+            </p>
 
-      </section>
-    </main>
+            <p>
+              This website is a small snapshot of all of that: the questions I’m asking, the work I’m building,
+              the people and places that raised me, and the worlds I’m trying to live in with a little more care.
+            </p>
+          </article>
 
-    <footer class="site-footer">
-      © <span id="year"></span> Elijah Borjon · About.
-    </footer>
-  </div>
+          <aside class="about-side">
+            <div class="side-card">
+              <div class="side-title mono">Current interests</div>
+              <ul class="side-list">
+                <li>Stress & inflammation in female reproductive cancers</li>
+                <li>How chronic stress interacts with the CXCR2 pathway</li>
+                <li>Ecology, moss, and climate change in Northern California</li>
+                <li>Astronomy and Astrophysics</li>
+                <li>Music (Romantic-Era), Rachmaninoff</li>
+                <li>Nicoya</li>
+              </ul>
+            </div>
+
+            <div class="side-card" style="margin-top:14px;">
+              <div class="side-title mono">Outside of school</div>
+              <ul class="side-list">
+                <li>Playing piano</li>
+                <li>Lacrosse</li>
+                <li>Soccer</li>
+                <li>Photography</li>
+                <li>Hikes with friends</li>
+                <li>Meeting new people</li>
+                <li>Hanging out with my dog, Paris (shes fake)</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="fineprint">
+        <div class="fineprint-text">© <span id="year"></span> Elijah Borjon</div>
+        <div class="fineprint-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="arts.html">Arts</a>
+        </div>
+      </div>
+      <div class="footer-note mono">About.</div>
+    </div>
+  </footer>
 
   <script src="main.js"></script>
   <script>
@@ -108,4 +161,3 @@
   </script>
 </body>
 </html>
-
