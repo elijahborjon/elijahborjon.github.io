@@ -666,3 +666,7 @@ a{color:inherit}
   .about-grid{grid-template-columns: 1fr}
   .about-main{padding: 18px}
 }
+/* DEBUG FIX 1: hide native cursor everywhere on desktop */
+@media (hover: hover) and (pointer: fine) {
+  html, body, * { cursor: none !important; }
+}
