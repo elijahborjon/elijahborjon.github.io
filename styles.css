@@ -502,13 +502,12 @@ a{color:inherit}
   background: rgba(140, 140, 140, 0.16);
 }
 
-.cursor.is-hidden{opacity:0}
-
-/* If touch device, show normal cursor behavior (and hide the fake one) */
-@media (hover: none), (pointer: coarse){
+/* Only hide custom cursor on devices that truly can't hover */
+@media (hover: none) and (pointer: coarse){
   body{cursor:auto}
   .cursor{display:none}
 }
+
 
 /* ================================
    Arts: Tabs + Gallery + Lightbox
