@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Elijah Borjon | Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <meta name="description" content="Elijah Borjon – Student leader, biology researcher, musician, and entrepreneur. Learn more at borjon.earth.">
   <meta name="keywords" content="Elijah Borjon, Borjon, borjon earth, elijah borjon website">
   <meta name="author" content="Elijah Borjon">
   <link rel="canonical" href="https://borjon.earth/">
   <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
 
   <script type="application/ld+json">
   {
@@ -27,96 +27,232 @@
 </head>
 
 <body>
-  <div class="cursor" id="cursor"></div>
-  <div class="page">
-    <header class="site-header">
-      <div class="nav-inner">
-        <div class="brand">
-          <div class="brand-main"><span>Elijah</span> Borjon</div>
-          <div class="brand-sub">Research · Music · Portfolio</div>
-        </div>
-        <nav class="site-nav">
-          <a href="index.html" data-page="index.html">Home</a>
-          <a href="research.html" data-page="research.html">Research</a>
-          <a href="arts.html" data-page="arts.html">Arts</a>
-          <a href="about.html" data-page="about.html">About</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="page-section--top page-section">
-        <div class="hero">
-          <div class="hero-media">
-            <!-- Replace hero.mp4 & hero-poster.jpg with your own -->
-            <video
-              src="assets/video/hero.mp4"
-              autoplay
-              muted
-              loop
-              playsinline
-              poster="assets/hero-poster.jpg"
-            ></video>
-            <div class="hero-overlay"></div>
-          </div>
-
-          <div class="hero-content">
-            <div class="hero-eyebrow">Student · Researcher · Musician · Photographer</div>
-            <h1 class="hero-title">
-              Creating and visualizing work at the intersection of
-              <span>biology, music, and care.</span>
-            </h1>
-            <p class="hero-text">
-              I study stress pathways in cancer, live in ecology, and I spend just as much
-              time at the piano as I do with journal articles. This site collects
-              the projects, images, and stories that have shaped me so far.
-            </p>
-
-            <div class="hero-cta-row">
-              <a href="research.html" class="btn">
-                View research <span>↗</span>
-              </a>
-              <a href="arts.html" class="btn btn-secondary">
-                See the photography portfolio <span>★</span>
-              </a>
-            </div>
-
-            <div class="hero-meta">
-              Thank you for visiting my website!
-            </div>
-          </div>
-        </div>
-
-        <div class="quick-links">
-          <a href="research.html" class="quick-card">
-            <div class="quick-card-tag">Research</div>
-            <div class="quick-card-title">Stress & female reproductive cancer</div>
-            <div class="quick-card-text">
-              Embedded access to my paper on CXCR2, stress, and reproductive cancers in Central America.
-            </div>
-          </a>
-          <a href="arts.html" class="quick-card">
-            <div class="quick-card-tag">Arts Portfolio</div>
-            <div class="quick-card-title">Concert & sports photography</div>
-            <div class="quick-card-text">
-              Curated galleries of the images that captivate audiences and sports fields.
-            </div>
-          </a>
-          <a href="about.html" class="quick-card">
-            <div class="quick-card-tag">About</div>
-            <div class="quick-card-title">Who I am beyond the work</div>
-            <div class="quick-card-text">
-              A longer biography about family, translation, music, science, and the questions I’m still asking.
-            </div>
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      © <span id="year"></span> Elijah Borjon · Built on Hopes and Dreams.
-    </footer>
+  <!-- Announcement Bar (Plasmidsaurus-style pattern) -->
+  <div class="announce" role="region" aria-label="Announcement">
+    <div class="announce-inner">
+      <span class="announce-pill">Now</span>
+      <span class="announce-text">Senior year portfolio in motion — research, music, and fieldwork updates weekly.</span>
+      <a class="announce-link" href="about.html">What I’m building →</a>
+    </div>
   </div>
+
+  <!-- Fixed Header -->
+  <header class="header" data-header-visible="true">
+    <nav class="header-nav" aria-label="Primary">
+      <div class="header-left">
+        <a class="logo" href="index.html" aria-label="Elijah Borjon home">
+          <span class="logo-mark">EB</span>
+          <span class="logo-text">Elijah Borjon</span>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="header-links" id="desktopLinks">
+        <a class="navlink is-active" href="index.html">Home</a>
+        <a class="navlink" href="research.html">Research</a>
+        <a class="navlink" href="arts.html">Arts</a>
+        <a class="navlink" href="about.html">About</a>
+      </div>
+
+      <div class="header-cta">
+        <a class="btn btn-dark" href="research.html">Read research</a>
+        <a class="btn btn-neon" href="arts.html">View portfolio</a>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="mobile-inner">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="research.html">Research</a>
+        <a class="mobile-link" href="arts.html">Arts</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <div class="mobile-cta">
+          <a class="btn btn-dark" href="research.html">Read research</a>
+          <a class="btn btn-neon" href="arts.html">View portfolio</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO / Main Header (rotating postfix words pattern) -->
+    <section class="section hero" data-reveal>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="display" data-main-header-title>
+            <span>Build</span>
+            <span class="postfix-wrap">
+              <span class="postfix" data-main-header-title-postfix>research</span>
+              <span class="postfix" data-main-header-title-postfix>music</span>
+              <span class="postfix" data-main-header-title-postfix>photos</span>
+              <span class="postfix" data-main-header-title-postfix>community</span>
+              <span class="postfix" data-main-header-title-postfix>meaning</span>
+              <span class="postfix-shadow" aria-hidden="true">research</span>
+            </span>
+          </h1>
+
+          <div class="hero-sub mono" data-main-header-body>
+            Creating and visualizing work at the intersection of biology, music, and care.
+          </div>
+
+          <p class="hero-p">
+            I study stress pathways in cancer, live in ecology, and spend just as much time at the piano
+            as I do with journal articles. This site collects the projects, images, and stories that
+            have shaped me so far.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-light" href="research.html">View research <span class="arrow">↗</span></a>
+            <a class="btn btn-outline" href="arts.html">Photography portfolio <span class="star">★</span></a>
+          </div>
+
+          <div class="hero-meta mono">
+            Thank you for visiting my website!
+          </div>
+        </div>
+
+        <div class="hero-media" data-reveal>
+          <!-- Your existing assets path kept -->
+          <div class="media-card">
+            <video autoplay muted loop playsinline class="media-video" poster="assets/hero-poster.jpg">
+              <source src="assets/video/hero.mp4" type="video/mp4" />
+            </video>
+            <div class="media-overlay"></div>
+            <div class="media-badge mono">featured</div>
+            <a class="media-cta" href="about.html" aria-label="Learn more about Elijah">
+              <span class="iconbtn" aria-hidden="true">▶</span>
+              <span>Quick intro</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK LINKS (Plasmidsaurus “cards” energy, but your content) -->
+    <section class="section" data-reveal>
+      <div class="container">
+        <div class="grid-3">
+          <a class="card" href="research.html">
+            <div class="card-top">
+              <div class="tag mono">Research</div>
+              <div class="card-title">Stress & female reproductive cancer</div>
+            </div>
+            <p class="card-text">
+              CXCR2, chronic stress biology, and why some burdens become molecular—plus embedded access to the paper.
+            </p>
+            <div class="card-foot mono">Explore →</div>
+          </a>
+
+          <a class="card" href="arts.html">
+            <div class="card-top">
+              <div class="tag mono">Arts</div>
+              <div class="card-title">Concert & sports photography</div>
+            </div>
+            <p class="card-text">
+              Curated galleries from stages and sidelines—moments where motion turns into story.
+            </p>
+            <div class="card-foot mono">View →</div>
+          </a>
+
+          <a class="card" href="about.html">
+            <div class="card-top">
+              <div class="tag mono">About</div>
+              <div class="card-title">Who I am beyond the work</div>
+            </div>
+            <p class="card-text">
+              Family, translation, science, music, leadership—and the questions I’m still asking.
+            </p>
+            <div class="card-foot mono">Read →</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- “Way more than…” style explainer section -->
+    <section class="section section-oat" data-reveal>
+      <div class="container split">
+        <div>
+          <h2 class="h2">More than one lane</h2>
+          <p class="p">
+            I’m happiest when projects cross boundaries: a biology question explained with clean visuals,
+            a rehearsal informed by systems thinking, a photo series that documents belonging.
+          </p>
+          <div class="pill-row mono">
+            <span class="pill">Cancer biology</span>
+            <span class="pill">Statistics</span>
+            <span class="pill">Choir + piano</span>
+            <span class="pill">Field ecology</span>
+            <span class="pill">Community leadership</span>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-inner">
+            <div class="feature-kicker mono">Currently</div>
+            <div class="feature-title">Writing + building</div>
+            <p class="feature-text">
+              Research writeups, scholarship essays, and a living portfolio that stays minimal, fast, and readable.
+            </p>
+            <div class="feature-actions">
+              <a class="btn btn-dark" href="research.html">Research page</a>
+              <a class="btn btn-light" href="about.html">Bio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEXT CAROUSEL (quotes/testimonials; same interaction idea) -->
+    <section class="section" data-reveal>
+      <div class="container carousel">
+        <div class="carousel-left">
+          <h2 class="h3">What I care about</h2>
+          <p class="p">
+            A small set of principles that keeps my work grounded—especially when it gets busy.
+          </p>
+          <div class="carousel-controls">
+            <button class="iconbtn" data-carousel-prev aria-label="Previous">‹</button>
+            <button class="iconbtn" data-carousel-next aria-label="Next">›</button>
+          </div>
+        </div>
+
+        <div class="carousel-right" aria-live="polite">
+          <div class="quote is-active" data-quote>
+            <div class="quote-big">“Make the work kind, and make it rigorous.”</div>
+            <div class="quote-meta mono">North star</div>
+          </div>
+
+          <div class="quote" data-quote>
+            <div class="quote-big">“Clarity is a form of respect—especially in science.”</div>
+            <div class="quote-meta mono">How I write + present</div>
+          </div>
+
+          <div class="quote" data-quote>
+            <div class="quote-big">“Lead like a good accompanist: listen first, then support.”</div>
+            <div class="quote-meta mono">Music → leadership</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="fineprint">
+        <div class="fineprint-text">© <span id="year"></span> Elijah Borjon</div>
+        <div class="fineprint-links">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="arts.html">Arts</a>
+        </div>
+      </div>
+      <div class="footer-note mono">Built on Hopes and Dreams.</div>
+    </div>
+  </footer>
 
   <script src="main.js"></script>
   <script>
