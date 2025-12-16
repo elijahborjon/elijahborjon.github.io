@@ -2,163 +2,272 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Elijah Borjon | Arts Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elijah Borjon | Arts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="description" content="Arts portfolio — concert and sports photography by Elijah Borjon." />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico" />
 </head>
+
 <body>
+  <!-- Custom cursor -->
   <div class="cursor" id="cursor"></div>
-  <div class="page">
-    
-    <header class="site-header">
-      <div class="nav-inner">
-        <div class="brand">
-          <div class="brand-main"><span>Elijah</span> Borjon</div>
-          <div class="brand-sub">Research · Music · Portfolio</div>
-        </div>
-        <nav class="site-nav">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="arts.html">Arts</a>
-          <a href="about.html">About</a>
-        </nav>
+
+  <!-- Announcement Bar -->
+  <div class="announce" role="region" aria-label="Announcement">
+    <div class="announce-inner">
+      <span class="announce-pill">Arts</span>
+      <span class="announce-text">Concert + sports photography — small archive of motion and memory.</span>
+      <a class="announce-link" href="about.html">About the work →</a>
+    </div>
+  </div>
+
+  <!-- Fixed Header -->
+  <header class="header" data-header-visible="true">
+    <nav class="header-nav" aria-label="Primary">
+      <div class="header-left">
+        <a class="logo" href="index.html" aria-label="Elijah Borjon home">
+          <span class="logo-mark">EB</span>
+          <span class="logo-text">Elijah Borjon</span>
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </header>
 
-    <main>
-      <section class="page-section--top page-section">
+      <div class="header-links" id="desktopLinks">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="research.html">Research</a>
+        <a class="navlink is-active" href="arts.html">Arts</a>
+        <a class="navlink" href="about.html">About</a>
+      </div>
 
-        <div class="section-eyebrow">Arts Portfolio</div>
-        <h1 class="section-title">Concert and sports photography.</h1>
-        <p class="section-intro">
-          A small archive of moments I’ve caught on camera between concerts at the Phoenix to moments at Sonoma Academy to the best game moments in Lacrosse and more! 
+      <div class="header-cta">
+        <a class="btn btn-dark" href="#gallery">View gallery</a>
+        <a class="btn btn-neon" href="research.html">Research</a>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile" id="mobileMenu" hidden>
+      <div class="mobile-inner">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="research.html">Research</a>
+        <a class="mobile-link" href="arts.html">Arts</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <div class="mobile-cta">
+          <a class="btn btn-dark" href="#gallery">View gallery</a>
+          <a class="btn btn-neon" href="research.html">Research</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section section-oat" data-reveal>
+      <div class="container">
+        <div class="tag mono">Arts Portfolio</div>
+        <h1 class="h2" style="margin-top:12px;">Concert and sports photography.</h1>
+        <p class="p" style="max-width: 80ch;">
+          A small archive of moments I’ve caught on camera — between concerts, life at Sonoma Academy,
+          and the best game moments (lacrosse + more).
         </p>
 
-        <div class="tabs">
-          <button class="tab-button tab-button--active" data-tab-target="concert-panel">
-            Concert
-          </button>
-          <button class="tab-button" data-tab-target="sports-panel">
-            Sports
-          </button>
+        <!-- Tabs -->
+        <div class="tabs mono" id="gallery" style="margin-top:18px;">
+          <button class="tab is-active" type="button" data-tab="concert">Concert</button>
+          <button class="tab" type="button" data-tab="sports">Sports</button>
         </div>
 
-        <!-- Concert tab -->
-        <div class="tab-panel tab-panel--active" id="concert-panel">
-          <div class="gallery-grid">
-
-            <div class="gallery-item">
-              <img src="assets/concert1.jpg" alt="Concert photo 1" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert2.jpg" alt="Concert photo 2" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert3.jpg" alt="Concert photo 3" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert4.jpg" alt="Concert photo 4" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert5.jpg" alt="Concert photo 5" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert6.jpg" alt="Concert photo 6" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert7.jpg" alt="Concert photo 7" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert8.jpg" alt="Concert photo 8" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert9.jpg" alt="Concert photo 9" />
-            </div>
-
-            <div class="gallery-item">
-              <img src="assets/concert10.jpg" alt="Concert photo 10" />
-            </div>
-
+        <!-- Concert -->
+        <section class="panel is-active" data-panel="concert" aria-label="Concert gallery" style="margin-top:14px;">
+          <div class="gallery">
+            <button class="shot" type="button" data-lightbox="assets/concert1.jpg" aria-label="Open concert photo 1">
+              <img src="assets/concert1.jpg" alt="Concert photo 1" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert2.jpg" aria-label="Open concert photo 2">
+              <img src="assets/concert2.jpg" alt="Concert photo 2" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert3.jpg" aria-label="Open concert photo 3">
+              <img src="assets/concert3.jpg" alt="Concert photo 3" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert4.jpg" aria-label="Open concert photo 4">
+              <img src="assets/concert4.jpg" alt="Concert photo 4" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert5.jpg" aria-label="Open concert photo 5">
+              <img src="assets/concert5.jpg" alt="Concert photo 5" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert6.jpg" aria-label="Open concert photo 6">
+              <img src="assets/concert6.jpg" alt="Concert photo 6" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert7.jpg" aria-label="Open concert photo 7">
+              <img src="assets/concert7.jpg" alt="Concert photo 7" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert8.jpg" aria-label="Open concert photo 8">
+              <img src="assets/concert8.jpg" alt="Concert photo 8" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert9.jpg" aria-label="Open concert photo 9">
+              <img src="assets/concert9.jpg" alt="Concert photo 9" loading="lazy" />
+            </button>
+            <button class="shot" type="button" data-lightbox="assets/concert10.jpg" aria-label="Open concert photo 10">
+              <img src="assets/concert10.jpg" alt="Concert photo 10" loading="lazy" />
+            </button>
           </div>
-        </div>
+        </section>
 
-        <!-- Sports tab -->
-        <div class="tab-panel" id="sports-panel">
-          <div class="gallery-grid">
+        <!-- Sports -->
+        <section class="panel" data-panel="sports" aria-label="Sports gallery" style="margin-top:14px;">
+          <div class="gallery">
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports1.jpg" aria-label="Open sports photo 1">
+                <img src="assets/sports1.jpg" alt="Sports photo 1" loading="lazy" />
+              </button>
+              <figcaption class="cap">Game day focus</figcaption>
+            </figure>
 
-            <div class="gallery-item">
-              <img src="assets/sports1.jpg" alt="Sports photo 1" />
-              <div class="gallery-caption">Game day focus</div>
-            </div>
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports2.jpg" aria-label="Open sports photo 2">
+                <img src="assets/sports2.jpg" alt="Sports photo 2" loading="lazy" />
+              </button>
+              <figcaption class="cap">In motion</figcaption>
+            </figure>
 
-            <div class="gallery-item">
-              <img src="assets/sports2.jpg" alt="Sports photo 2" />
-              <div class="gallery-caption">In motion</div>
-            </div>
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports3.jpg" aria-label="Open sports photo 3">
+                <img src="assets/sports3.jpg" alt="Sports photo 3" loading="lazy" />
+              </button>
+              <figcaption class="cap">Sideline energy</figcaption>
+            </figure>
 
-            <div class="gallery-item">
-              <img src="assets/sports3.jpg" alt="Sports photo 3" />
-              <div class="gallery-caption">Sideline energy</div>
-            </div>
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports4.jpg" aria-label="Open sports photo 4">
+                <img src="assets/sports4.jpg" alt="Sports photo 4" loading="lazy" />
+              </button>
+              <figcaption class="cap">Sideline energy</figcaption>
+            </figure>
 
-            <div class="gallery-item">
-              <img src="assets/sports4.jpg" alt="Sports photo 3" />
-              <div class="gallery-caption">Sideline energy</div>
-            </div>
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports5.jpg" aria-label="Open sports photo 5">
+                <img src="assets/sports5.jpg" alt="Sports photo 5" loading="lazy" />
+              </button>
+              <figcaption class="cap">Sideline energy</figcaption>
+            </figure>
 
-            <div class="gallery-item">
-              <img src="assets/sports5.jpg" alt="Sports photo 3" />
-              <div class="gallery-caption">Sideline energy</div>
-            </div>
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports6.jpg" aria-label="Open sports photo 6">
+                <img src="assets/sports6.jpg" alt="Sports photo 6" loading="lazy" />
+              </button>
+              <figcaption class="cap">Sideline energy</figcaption>
+            </figure>
 
-           <div class="gallery-item">
-              <img src="assets/sports6.jpg" alt="Sports photo 3" />
-              <div class="gallery-caption">Sideline energy</div>
-            </div>
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports7.jpg" aria-label="Open sports photo 7">
+                <img src="assets/sports7.jpg" alt="Sports photo 7" loading="lazy" />
+              </button>
+              <figcaption class="cap">Sideline energy</figcaption>
+            </figure>
 
-            <div class="gallery-item">
-              <img src="assets/sports7.jpg" alt="Sports photo 3" />
-              <div class="gallery-caption">Sideline energy</div>
-            </div>
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports8.jpg" aria-label="Open sports photo 8">
+                <img src="assets/sports8.jpg" alt="Sports photo 8" loading="lazy" />
+              </button>
+              <figcaption class="cap">Sideline energy</figcaption>
+            </figure>
 
-            <div class="gallery-item">
-              <img src="assets/sports8.jpg" alt="Sports photo 3" />
-              <div class="gallery-caption">Sideline energy</div>
-            </div>
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports9.jpg" aria-label="Open sports photo 9">
+                <img src="assets/sports9.jpg" alt="Sports photo 9" loading="lazy" />
+              </button>
+              <figcaption class="cap">Sideline energy</figcaption>
+            </figure>
 
-            <div class="gallery-item">
-              <img src="assets/sports9.jpg" alt="Sports photo 3" />
-              <div class="gallery-caption">Sideline energy</div>
-            </div>
-
-           <div class="gallery-item">
-              <img src="assets/sports10.jpg" alt="Sports photo 3" />
-              <div class="gallery-caption">Sideline energy</div>
-            </div>
-
+            <figure class="shot-wrap">
+              <button class="shot" type="button" data-lightbox="assets/sports10.jpg" aria-label="Open sports photo 10">
+                <img src="assets/sports10.jpg" alt="Sports photo 10" loading="lazy" />
+              </button>
+              <figcaption class="cap">Sideline energy</figcaption>
+            </figure>
           </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- Lightbox (optional but very nice) -->
+    <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog" aria-label="Image viewer">
+      <button class="lightbox-close iconbtn" id="lightboxClose" aria-label="Close">×</button>
+      <img class="lightbox-img" id="lightboxImg" alt="" />
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="fineprint">
+        <div class="fineprint-text">© <span id="year"></span> Elijah Borjon</div>
+        <div class="fineprint-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="about.html">About</a>
         </div>
-
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      © <span id="year"></span> Elijah Borjon · Arts portfolio.
-    </footer>
-
-  </div>
+      </div>
+      <div class="footer-note mono">Arts portfolio.</div>
+    </div>
+  </footer>
 
   <script src="main.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Page-specific JS (tabs + lightbox) -->
+  <script>
+    // Tabs
+    (function () {
+      const tabs = Array.from(document.querySelectorAll("[data-tab]"));
+      const panels = Array.from(document.querySelectorAll("[data-panel]"));
+      if (!tabs.length || !panels.length) return;
+
+      const activate = (key) => {
+        tabs.forEach(t => t.classList.toggle("is-active", t.dataset.tab === key));
+        panels.forEach(p => p.classList.toggle("is-active", p.dataset.panel === key));
+      };
+
+      tabs.forEach(t => t.addEventListener("click", () => activate(t.dataset.tab)));
+    })();
+
+    // Lightbox
+    (function () {
+      const lb = document.getElementById("lightbox");
+      const img = document.getElementById("lightboxImg");
+      const close = document.getElementById("lightboxClose");
+      const triggers = Array.from(document.querySelectorAll("[data-lightbox]"));
+      if (!lb || !img || !close || !triggers.length) return;
+
+      const open = (src, alt) => {
+        img.src = src;
+        img.alt = alt || "";
+        lb.hidden = false;
+        document.body.style.overflow = "hidden";
+      };
+
+      const shut = () => {
+        lb.hidden = true;
+        img.src = "";
+        document.body.style.overflow = "";
+      };
+
+      triggers.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const pic = btn.querySelector("img");
+          open(btn.dataset.lightbox, pic ? pic.alt : "");
+        });
+      });
+
+      close.addEventListener("click", shut);
+      lb.addEventListener("click", (e) => { if (e.target === lb) shut(); });
+      document.addEventListener("keydown", (e) => { if (!lb.hidden && e.key === "Escape") shut(); });
+    })();
   </script>
 </body>
 </html>
