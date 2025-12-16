@@ -177,6 +177,74 @@ a{color:inherit;text-decoration:none}
   box-shadow:0 18px 40px rgba(0,0,0,.1);
 }
 
+/* ================================
+   Arts: Gallery (clean, consistent tiles)
+================================ */
+
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+/* Each tile spans 4 columns (3 per row) on desktop */
+.gallery > *{
+  grid-column: span 4;
+}
+
+/* 2 per row on medium screens */
+@media (max-width: 1100px){
+  .gallery > *{ grid-column: span 6; }
+}
+
+/* 1 per row on mobile */
+@media (max-width: 700px){
+  .gallery > *{ grid-column: span 12; }
+}
+
+/* If you have bare buttons as children, make them behave like blocks */
+.gallery .shot{
+  width:100%;
+  display:block;
+}
+
+/* The clickable tile */
+.shot{
+  border: 1px solid rgba(16,55,20,.12);
+  border-radius: var(--radius-lg);
+  overflow:hidden;
+  padding:0;
+  background:#fff;
+  cursor:pointer;
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+  transform: translateY(0);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+/* Give tiles a consistent, “gallery-like” height without distortion */
+.shot img{
+  width:100%;
+  height: clamp(220px, 26vw, 340px); /* nice + responsive */
+  object-fit: cover;                 /* crops instead of stretching */
+  display:block;
+}
+
+/* Hover */
+.shot:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 46px rgba(0,0,0,.12);
+  border-color: rgba(16,55,20,.20);
+}
+
+/* Captions */
+.shot-wrap{ margin:0; }
+.cap{
+  margin-top:10px;
+  font-size:12px;
+  color: rgba(11,28,16,.62);
+  font-family: var(--mono);
+}
+
 /* =========================================================
    Lightbox (SAFE)
 ========================================================= */
